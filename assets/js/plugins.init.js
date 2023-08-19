@@ -141,7 +141,31 @@ document.getElementsByClassName("back-button")[0]?.addEventListener("click", (e)
 
 
 if(document.getElementsByClassName('tiny-two-item').length > 0) {
-    var slider = tns({
+
+    var slider_one = tns({
+        container: '.tiny-one-item',
+        controls: true,
+        mouseDrag: true,
+        loop: true,
+        rewind: true,
+        autoplay: true,
+        autoplayButtonOutput: false,
+        autoplayTimeout: 3000,
+        navPosition: "top",
+        controlsText: ['<i class="mdi mdi-chevron-left "></i>', '<i class="mdi mdi-chevron-right"></i>'],
+        nav: false,
+        speed: 400,
+        gutter: 0,
+        responsive: {
+            768: {
+                items: 2
+            },
+            399: {
+                items: 2
+            },
+        },
+    });
+    var slider_two = tns({
         container: '.tiny-two-item',
         controls: true,
         mouseDrag: true,
@@ -150,13 +174,62 @@ if(document.getElementsByClassName('tiny-two-item').length > 0) {
         autoplay: true,
         autoplayButtonOutput: false,
         autoplayTimeout: 3000,
-        navPosition: "bottom",
+        navPosition: "top",
         controlsText: ['<i class="mdi mdi-chevron-left "></i>', '<i class="mdi mdi-chevron-right"></i>'],
         nav: false,
         speed: 400,
         gutter: 0,
         responsive: {
             768: {
+                items: 2
+            },
+            399: {
+                items: 2
+            },
+        },
+    });
+    var slider_three = tns({
+        container: '.tiny-three-item',
+        controls: true,
+        mouseDrag: true,
+        loop: true,
+        rewind: true,
+        autoplay: true,
+        autoplayButtonOutput: false,
+        autoplayTimeout: 3000,
+        navPosition: "top",
+        controlsText: ['<i class="mdi mdi-chevron-left "></i>', '<i class="mdi mdi-chevron-right"></i>'],
+        nav: false,
+        speed: 400,
+        gutter: 0,
+        responsive: {
+            768: {
+                items: 2
+            },
+            399: {
+                items: 2
+            },
+        },
+    });
+    var slider_four = tns({
+        container: '.tiny-four-item',
+        controls: true,
+        mouseDrag: true,
+        loop: true,
+        rewind: true,
+        autoplay: true,
+        autoplayButtonOutput: false,
+        autoplayTimeout: 3000,
+        navPosition: "top",
+        controlsText: ['<i class="mdi mdi-chevron-left "></i>', '<i class="mdi mdi-chevron-right"></i>'],
+        nav: false,
+        speed: 400,
+        gutter: 0,
+        responsive: {
+            768: {
+                items: 2
+            },
+            399: {
                 items: 2
             },
         },
