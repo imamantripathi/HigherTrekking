@@ -74,13 +74,15 @@
 
       <div class="nav-icons flex items-center lg_992:order-2 ml-auto">
         <!-- Navbar Button -->
-        <div class="">
-          <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" type="button"
-            class="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-md">Call Now!</button>
-
-
-        </div>
-
+        <div class="lg:hidden">
+          <a href="https://wa.link/8g010n"
+              class="btn py-2 px-4 shadow-slate-200 shadow-lg">  <i class="uil uil-whatsapp text-2xl text-orange-600"></i> </a>
+      </div>
+      <div class="hidden lg:flex">
+        <a href="https://wa.link/8g010n"
+            class="btn bg-orange-600 hover:bg-orange-700 border-orange-600 hover:border-orange-700 text-white rounded-md">WhatsApp <i class="uil uil-whatsapp text-md"></i> </a>
+    </div>
+    
         <!-- Navbar Collapse Manu Button -->
         <button data-collapse="menu-collapse" type="button"
           class="collapse-btn inline-flex items-center ml-3 text-dark dark:text-white lg_992:hidden"
@@ -1824,6 +1826,7 @@
       });
     });
   </script>
+
   <!-- JAVASCRIPTS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
   <script src="assets/libs/gumshoejs/gumshoe.polyfills.min.js"></script>
