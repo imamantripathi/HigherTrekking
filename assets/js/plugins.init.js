@@ -161,7 +161,7 @@ if(document.getElementsByClassName('tiny-two-item').length > 0) {
                 items: 2
             },
             399: {
-                items: 2
+                items: 1
             },
         },
     });
@@ -184,7 +184,7 @@ if(document.getElementsByClassName('tiny-two-item').length > 0) {
                 items: 2
             },
             399: {
-                items: 2
+                items: 1
             },
         },
     });
@@ -207,7 +207,7 @@ if(document.getElementsByClassName('tiny-two-item').length > 0) {
                 items: 2
             },
             399: {
-                items: 2
+                items: 1
             },
         },
     });
@@ -230,7 +230,7 @@ if(document.getElementsByClassName('tiny-two-item').length > 0) {
                 items: 2
             },
             399: {
-                items: 2
+                items: 1
             },
         },
     });
