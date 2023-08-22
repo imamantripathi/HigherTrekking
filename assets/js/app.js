@@ -1,11 +1,3 @@
-/* Template Name: Upwind - Tailwind CSS Landing Page Template
-   Author: Shreethemes
-   Email: support@shreethemes.in
-   Website: https://shreethemes.in
-   Version: 1.5.0
-   Created: March 2022
-   File Description: Main JS file of the template
-*/
 
 
 /*********************************/
@@ -15,81 +7,100 @@
  *     02.  Menus                *
  *     03.  Back to top          *
  ================================*/
- window.addEventListener('load', fn, false)
+window.addEventListener("load", fn, false);
 
- //  window.onload = function loader() {
- function fn() {
-     // Preloader
-     if (document.getElementById('preloader')) {
-         setTimeout(() => {
-             document.getElementById('preloader').style.visibility = 'hidden';
-             document.getElementById('preloader').style.opacity = '0';
-         }, 350);
-     }
- }
+//  window.onload = function loader() {
+function fn() {
+  // Preloader
+  if (document.getElementById("preloader")) {
+    setTimeout(() => {
+      document.getElementById("preloader").style.visibility = "hidden";
+      document.getElementById("preloader").style.opacity = "0";
+    }, 350);
+  }
+}
 /*********************/
 /*     Menus         */
 /*********************/
 
 function windowScroll() {
-    const navbar = document.getElementById("navbar");
-    if (
-        document.body.scrollTop >= 50 ||
-        document.documentElement.scrollTop >= 50
-    ) {
-        navbar.classList.add("is-sticky");
-    } else {
-        navbar.classList.remove("is-sticky");
-    }
+  const navbar = document.getElementById("navbar");
+  if (
+    document.body.scrollTop >= 50 ||
+    document.documentElement.scrollTop >= 50
+  ) {
+    navbar.classList.add("is-sticky");
+  } else {
+    navbar.classList.remove("is-sticky");
+  }
 }
 
-window.addEventListener('scroll', (ev) => {
-    ev.preventDefault();
-    windowScroll();
-})
+window.addEventListener("scroll", (ev) => {
+  ev.preventDefault();
+  windowScroll();
+});
 
 // Navbar Active Class
 try {
-    var spy = new Gumshoe('#navbar-navlist a', {
-        // Active classes
-        // navClass: 'active', // applied to the nav list item
-        // contentClass: 'active', // applied to the content
-        offset: 80
-    });
-} catch (error) {
-    
-}
+  var spy = new Gumshoe("#navbar-navlist a", {
+    // Active classes
+    // navClass: 'active', // applied to the nav list item
+    // contentClass: 'active', // applied to the content
+    offset: 80,
+  });
+} catch (error) {}
 
-
-// Smooth scroll 
+// Smooth scroll
 try {
-    var scroll = new SmoothScroll('#navbar-navlist a', {
-        speed: 800,
-        offset: 80
-    });
-} catch (error) {
-    
-}
+  var scroll = new SmoothScroll("#navbar-navlist a", {
+    speed: 800,
+    offset: 80,
+  });
+} catch (error) {}
 
 // Menu Collapse
 const toggleCollapse = (elementId, show = true) => {
-    const collapseEl = document.getElementById(elementId);
-    if (show) {
-        collapseEl.classList.remove('hidden');
-    } else {
-        collapseEl.classList.add('hidden');
-    }
-}
+  const collapseEl = document.getElementById(elementId);
+  if (show) {
+    collapseEl.classList.remove("hidden");
+  } else {
+    collapseEl.classList.add("hidden");
+  }
+};
+// Add click event listeners to navigation links in the mobile menu
+document.querySelectorAll(".nav-link").forEach(function (navLink) {
+  navLink.addEventListener("click", function () {
+    // Find the parent menu-collapse element and hide it
+    const parentCollapseId = navLink.closest(".navigation").getAttribute("id");
+    toggleCollapse(parentCollapseId, false);
+  });
+});
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Toggle target elements using [data-collapse]
-    document.querySelectorAll('[data-collapse]').forEach(function (collapseToggleEl) {
-        var collapseId = collapseToggleEl.getAttribute('data-collapse');
+document.addEventListener("DOMContentLoaded", () => {
+  // Toggle target elements using [data-collapse]
+  document
+    .querySelectorAll("[data-collapse]")
+    .forEach(function (collapseToggleEl) {
+      var collapseId = collapseToggleEl.getAttribute("data-collapse");
 
-        collapseToggleEl.addEventListener('click', function () {
-            toggleCollapse(collapseId, document.getElementById(collapseId).classList.contains('hidden'));
-        });
+      collapseToggleEl.addEventListener("click", function () {
+        toggleCollapse(
+          collapseId,
+          document.getElementById(collapseId).classList.contains("hidden")
+        );
+      });
     });
+
+  // Add click event listeners to navigation links in the mobile menu
+  document.querySelectorAll(".nav-link").forEach(function (navLink) {
+    navLink.addEventListener("click", function () {
+      // Find the parent menu-collapse element and hide it
+      const parentCollapseId = navLink
+        .closest(".navigation")
+        .getAttribute("id");
+      toggleCollapse(parentCollapseId, false);
+    });
+  });
 });
 
 window.toggleCollapse = toggleCollapse;
@@ -100,45 +111,46 @@ window.toggleCollapse = toggleCollapse;
 
 var mybutton = document.getElementById("back-to-top");
 window.onscroll = function () {
-    scrollFunction();
+  scrollFunction();
 };
 
 function scrollFunction() {
-    if(mybutton!=null){
-        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
+  if (mybutton != null) {
+    if (
+      document.body.scrollTop > 500 ||
+      document.documentElement.scrollTop > 500
+    ) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
     }
+  }
 }
 
 function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
 
 /*********************/
 /* Dark & Light Mode */
 /*********************/
 try {
-    function changeTheme(e){
-        e.preventDefault()
-        const htmlTag = document.getElementsByTagName("html")[0]
-        
-        if (htmlTag.className.includes("dark")) {
-            htmlTag.className = 'light'
-        } else {
-            htmlTag.className = 'dark'
-        }
+  function changeTheme(e) {
+    e.preventDefault();
+    const htmlTag = document.getElementsByTagName("html")[0];
+
+    if (htmlTag.className.includes("dark")) {
+      htmlTag.className = "light";
+    } else {
+      htmlTag.className = "dark";
     }
+  }
 
-    const switcher = document.getElementById("theme-mode")
-    switcher?.addEventListener("click" ,changeTheme )
-    
-    const chk = document.getElementById('chk');
+  const switcher = document.getElementById("theme-mode");
+  switcher?.addEventListener("click", changeTheme);
 
-    chk.addEventListener('change',changeTheme);
-} catch (err) {
-    
-}
+  const chk = document.getElementById("chk");
+
+  chk.addEventListener("change", changeTheme);
+} catch (err) {}
